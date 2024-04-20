@@ -1,0 +1,79 @@
+#include <iostream>
+#include <vector>
+#include <math.h>
+#include <stdio.h>
+
+#define MAX 5000
+
+using namespace std;
+
+
+class Solution {
+    public:
+        bool isValid(string s) {
+            Stack stack;
+
+            for (int i = 0; i < s.length; i++) {
+                if (s[i] == '(' || s[i] == '[' || s[i] == '{') {
+                    stack.push(s[i]);
+                    continue;
+                }
+
+            }
+        }
+        
+};
+
+
+class Stack P {
+    int top;
+    
+    public:
+        char stack[MAX];
+
+        Stack() { top = -1; }
+        bool push(char x);
+        char pop();
+        bool isEmpty();
+};
+
+bool Stack::push(char item) {
+    if (top >= (MAX - 1)) {
+        printf("Stack overflow!\n");
+     
+        return false;
+    } else {
+        stack[++top] = item;
+        printf("%s\n", item);
+        
+        return true;
+    }
+}
+
+char Stack::pop() {
+    if (top < 0) {
+        printf("Stack underflow!\n");
+
+        return 0;
+    } else {
+        char item = stack[top--];
+
+        return item;
+    }
+}
+
+bool Stack::isEmpty() {
+    return (top < 0);
+}
+
+int main(int argc, char * argv[]) {
+    Solution solution;
+    char items[] = [ "()", "()[]{}", "(]" ];
+
+    int length = sizeof(items)/sizeof(items[0]);
+    for (int i = 0; i < length; i++) {
+        solution.isValid(items[i]);
+    }
+
+	return 0;
+}

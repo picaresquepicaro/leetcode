@@ -1,0 +1,7 @@
+g++ -g -Wall input.cpp -o output
+
+optimized
+g++ -o -Wall input.cpp -o output
+
+math
+g++ -g -Wall input.cpp -o output -lm
